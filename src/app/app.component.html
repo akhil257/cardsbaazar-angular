@@ -1,0 +1,165 @@
+<div style="display: flex; height: 100vh;">
+    <div class="left-box">
+        <div class="logo-box">
+            <img src="../assets/images/Untitled design.png" alt="" class="logo">
+            <div class="logo-text">
+                CardsBaazar
+            </div>
+        </div>
+
+        <div class='filter'>
+            <div class="filter-heading">
+                Filters
+            </div>
+            <div class="best-suited">
+                Best Suited
+                <div class="suited-content">
+                    <label class="container">Shopping
+                        <input #isShopping id="isShopping" type="checkbox" [checked]="false"
+                            (change)="onShopping(isShopping.checked)" />
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">Premium
+                        <input #isPremium id="isPremium" type="checkbox" [checked]="false"
+                            (change)="onPremium(isPremium.checked)" /> <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">Easy Approval
+                        <input #isEasy id="isEasy" type="checkbox" [checked]="false"
+                            (change)="onEasy(isEasy.checked)" />
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">Travel
+                        <input #isTravel id="isTravel" type="checkbox" [checked]="false"
+                            (change)="onTravel(isTravel.checked)" /> <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">Food & Dinein
+                        <input #isFood id="isFood" type="checkbox" [checked]="false"
+                            (change)="onFood(isFood.checked)" />
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">Movies
+                        <input #isMovie id="isMovie" type="checkbox" [checked]="false"
+                            (change)="onMovie(isMovie.checked)" />
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">Fuel Offers
+                        <input #isFuel id="isFuel" type="checkbox" [checked]="false"
+                            (change)="onFuel(isFuel.checked)" />
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="best-suited">
+                Fees & Offers
+                <div class="suited-content">
+                    <div class="slider-label">
+                        <span>Joining Fees</span>
+                        <span>{{joiningValue}}&nbsp;&#8377;</span>
+                    </div>
+                    <ngx-slider [(value)]="joiningValue" [options]="joiningOptions" (valueChange)="checkCards()">
+                    </ngx-slider>
+                    <div class="slider-label">
+                        <span>Annual Fees</span>
+                        <span>{{amcValue}}&nbsp;&#8377;</span>
+                    </div>
+                    <ngx-slider [(value)]="amcValue" [options]="amcOptions" (valueChange)="checkCards()">
+                    </ngx-slider>
+                    <div class="slider-label">
+                        <span>Max Cashback</span>
+                        <span>{{cbValue}}% - 10+%</span>
+                    </div>
+                    <ngx-slider [(value)]="cbValue" [options]="cbOptions" (valueChange)="checkCards()"></ngx-slider>
+                    <div class="slider-label">
+                        <span>Free Lounge Access</span>
+                        <span>{{loungeValue}} - 10+</span>
+                    </div>
+                    <ngx-slider [(value)]="loungeValue" [options]="loungeOptions" (valueChange)="checkCards()">
+                    </ngx-slider>
+
+                </div>
+            </div>
+            <div style="width: 200px;">
+
+
+            </div>
+
+            <div class="best-suited">
+                Banks
+                <div class="suited-content">
+                    <label class="container" *ngFor="let bank of banks;  let i = index" for=is{{bank.desc}}>{{bank.desc}}
+                        <input #is{{bank.desc}} id=is{{bank.desc}} type="checkbox" [checked]="false"
+                            (change)="onBank(bank.id,$event)" value={{bank}} />
+
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <!-- <div *ngFor="let bank of banks;  let i = index">
+                <input #is{{bank.desc}} id=is{{bank.desc}} type="checkbox" [checked]="false"
+                    (change)="onBank(bank.id,$event)" value={{bank}} />
+                <label for=is{{bank.desc}} class="filter-label">{{bank.desc}}</label>
+                <br>
+            </div> -->
+        </div>
+    </div>
+    <div class="right-box">
+        <div class="right-top-box">
+
+            <p class="intro">
+                Explore best of Credit Cards<span class="wedont">We dont ask, store or share any information with any
+                    third parties.</span>
+            </p>
+            <div class="row">
+                <div class="search-box col-lg-3">
+                    <img src="../assets/images/loupe.png" alt="" style="width: 16px;height: 16px;margin-top: 4px;">
+
+                    <input #searchbar type="text" placeholder="Search..." class="search-text" (input)="searchCard(searchbar.value)">
+                </div>
+                <div class="col-lg-2">
+                    <button class="search-button">Search</button>
+                </div>
+                <div class="tabs">
+                    <!-- <div class="coming-soon">Comming Soon</div> -->
+                    <span style="flex: 1; padding-left: auto;">
+                        <button class="tab-button active-tab">Credit Cards</button>
+                    </span>
+                    <span style="flex: 1; padding-left: auto;">
+                        <button class="tab-button">Debit Cards</button>
+                    </span>
+
+                </div>
+            </div>
+            <h1 *ngIf="toShow" class="recommended">Recommended Credit Cards</h1>
+
+        </div>
+        <div *ngIf="toShow" class="row" style="margin: 0;">
+            <app-cards [cName]="card" class="col-lg-3 cb-card" *ngFor="let card of featuredCards;  let i = index">
+            </app-cards>
+        </div>
+        <div class="pop-box">
+            <h1 class="pop">Popular Credit Cards</h1>
+            <div style="display: flex;">
+                <div class="view">
+                    <img src="../assets/images/visualization.png" alt="">
+                </div>
+                <div class="view">
+                    <img src="../assets/images/list-interface-symbol.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin: 0;">
+            <app-cards [cName]="card" class="col-lg-3 cb-card" *ngFor="let card of filteredCards;  let i = index">
+            </app-cards>
+        </div>
+        <div class="pop-box" style="justify-content: center">
+            <h3 style="font-size: 14px;">&copy; CardsBaazar.com</h3>
+        </div>
+    </div>
+</div>

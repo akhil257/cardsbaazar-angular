@@ -1,0 +1,48 @@
+        /* You can add global styles to this file, and also import other style files */
+        
+         :root {
+            --main-color: rgb(0, 119, 255);
+            --tab-color: rgba(67, 160, 72, 0.897);
+            --tab-color-shadow: rgba(67, 160, 72, 0.315);
+        }
+        
+        .ngx-slider-ceil,
+        .ngx-slider-floor,
+        .ngx-slider-model-value {
+            display: none !important;
+        }
+        
+        .ngx-slider {
+            /* height: 4px; */
+            width: 85% !important;
+            margin: 8px 0 14px !important;
+        }
+        
+        .ngx-slider-pointer {
+            outline: none;
+        }
+        
+        .ngx-slider-selection {
+            background: linear-gradient(to right, rgba(0, 119, 255, 0.747), rgba(67, 160, 72, 0.966)) !important;
+        }
+        
+        .ngx-slider .ngx-slider-bar {
+            height: 6px !important;
+            border-radius: 30px !important;
+        }
+        
+        .ngx-slider .ngx-slider-pointer {
+            background-color: rgb(249, 202, 36) !important;
+            height: 21px !important;
+            width: 21px !important;
+            top: -8px !important;
+        }
+        
+        .ngx-slider-active::after {
+            background-color: white !important;
+        }
+        
+        .ngx-slider .ngx-slider-pointer:after {
+            top: 7px !important;
+            left: 7px !important;
+        }

@@ -1,0 +1,316 @@
+/* .filter {
+    flex: 3;
+    height: 100vh;
+} */
+
+.row {
+    margin: 0;
+}
+
+.left-box {
+    padding-left: 20px;
+    padding-top: 20px;
+    flex: 2;
+    overflow-y: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 10px rgb(196, 196, 196);
+}
+
+.logo-box {
+    margin-bottom: 41px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    margin-left: 14px;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.filter {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    padding-left: 4px;
+}
+
+.filter-heading {
+    font-size: 20px;
+    font-weight: 300;
+    color: grey;
+    margin-bottom: 7px;
+}
+
+.filter-label {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.best-suited {
+    padding-left: 10px;
+    margin-bottom: 12px;
+}
+
+.suited-content {
+    margin-top: 4.5px;
+    padding-left: 9px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 2.5px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 400;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* Hide the browser's default checkbox */
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+
+/* Create a custom checkbox */
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: rgb(212, 212, 212) !important;
+    border-radius: 4px;
+}
+
+
+/* On mouse-over, add a grey background color */
+
+.container:hover input~.checkmark {
+    background-color: rgb(155, 155, 155) !important;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+
+.container input:checked~.checkmark {
+    background-color: #2196F3 !important;
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+/* Show the checkmark when checked */
+
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+
+/* Style the checkmark/indicator */
+
+.container .checkmark:after {
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.cb-card {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.right-box {
+    flex: 9;
+    /* height: 100vh; */
+    overflow-y: scroll;
+    background-color: rgb(252, 252, 252);
+    padding-left: 10px;
+    font-family: 'Inter', sans-serif;
+    padding-top: 24px;
+}
+
+.wedont {
+    font-size: 12px;
+    color: gray;
+    margin-left: 36%;
+}
+
+.intro {
+    color: rgb(36, 36, 36);
+    font-size: 20px;
+    margin-bottom: 0.67rem;
+    /* margin: 15px 0; */
+}
+
+.right-top-box {
+    padding-left: 12px;
+    margin-top: 4px;
+}
+
+.pop-box {
+    margin-top: 23px;
+    background-color: #d8d8d8;
+    padding: 9px 13px;
+    margin-left: 16px;
+    margin-right: 16px;
+    border-radius: 6px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.view {
+    padding: 4px;
+    background-color: white;
+    font-size: 0;
+    margin-right: 10px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+.pop {
+    font-size: 1.1rem !important;
+    font-weight: 400 !important;
+    margin: 0px;
+    padding: 0;
+}
+
+.search-box {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    border: 1px solid rgb(224, 221, 221);
+    border-radius: 50px;
+    background-color: white;
+    padding: 6px 20px;
+    margin-right: 13px;
+    /* width: 50%; */
+}
+
+.search-text {
+    margin-top: 1px;
+    width: 100%;
+    border: none;
+    font-size: 14px;
+    padding-left: 8px;
+}
+
+.search-text:focus {
+    border: none;
+    outline: none;
+}
+
+.search-text::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: rgb(187, 187, 187);
+    vertical-align: baseline;
+    font-size: 12px;
+}
+
+.search-button {
+    color: white;
+    width: 70%;
+    background-color: var(--main-color);
+    border: none;
+    outline: none;
+    border-radius: 60px;
+    padding: 9px 8px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 3px 3px 10px rgba(0, 119, 255, 0.493);
+}
+
+.tabs {
+    display: flex;
+    width: 23%;
+    margin: auto;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid var(--tab-color);
+    position: relative;
+    padding: 0;
+    margin-right: 40px;
+    box-shadow: 3px 3px 10px var(--tab-color-shadow);
+}
+
+.tab-button {
+    width: 100%;
+    color: var(--tab-color);
+    background-color: white;
+    border: none;
+    outline: none;
+    /* border-radius: 60px; */
+    padding: 6px 8px;
+    font-size: 14px;
+    font-weight: 500;
+    /* box-shadow: 3px 3px 10px rgba(0, 119, 255, 0.493); */
+}
+
+.active-tab {
+    border-right: 1px solid var(--tab-color);
+    background-color: var(--tab-color);
+    color: white
+}
+
+.coming-soon {
+    color: black;
+    position: absolute;
+    right: -10px;
+    top: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+    background-color: rgb(255, 196, 2);
+    width: 140px;
+}
+
+.slider-label {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.recommended {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-top: 21px;
+    margin-left: 9px;
+    margin-bottom: 0;
+}

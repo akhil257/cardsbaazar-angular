@@ -1,0 +1,114 @@
+.card {
+    margin-top: 14px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgb(202, 202, 202);
+    padding: 12px;
+    font-family: 'Inter', sans-serif;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    cursor: pointer;
+    padding-bottom: 14px;
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgb(117, 117, 117);
+    /* -ms-transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03); */
+}
+
+.card:hover .img-style {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    box-shadow: 6px 6px 15px rgb(201, 201, 201);
+}
+
+.card:hover .pBadge,
+.card:hover .eBadge {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.card-body {
+    width: 99%;
+    padding: 14px .32rem 0px .39rem;
+}
+
+.card-title {
+    margin-bottom: 0.2rem;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 1rem;
+}
+
+.card-text {
+    font-size: 0.88rem;
+    color: rgba(0, 0, 0, 0.888);
+    font-weight: 400;
+    margin-bottom: .33rem;
+}
+
+.card-para {
+    /* height: 8.15rem; */
+    overflow: hidden;
+    font-size: 10px;
+    color: rgb(100, 100, 100);
+}
+
+.img-style {
+    height: 130px;
+    width: 100%;
+    object-fit: fill;
+    box-shadow: 4px 4px 11px rgb(131, 131, 131);
+    border-radius: 10px;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    z-index: 1;
+}
+
+.pBadge,
+.eBadge {
+    color: black;
+    position: absolute;
+    right: -10px;
+    top: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 6px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-radius: 3px;
+    z-index: 10;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.pBadge {
+    background-color: rgb(255, 196, 2);
+    width: 67px;
+}
+
+.eBadge {
+    background-color: rgb(2, 204, 255);
+    width: 70px;
+}
+
+.bank-icon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fees {
+    margin-top: 1px;
+    font-size: 0.83rem;
+    color: rgb(78, 78, 78);
+}
+
+.desc-row {
+    font-size: 12px;
+    color: rgb(78, 78, 78);
+}
+
+a:hover {
+    text-decoration: none;
+}
